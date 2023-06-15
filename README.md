@@ -1,2 +1,2 @@
 # gatsby-2
-Gatsby Practice
+Gatsby Practice from official document
