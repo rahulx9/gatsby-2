@@ -1,5 +1,6 @@
 import React from "react";
 import Layout from "../components/layout";
+import Seo from "../components/seo";
 
 const AboutPage: React.FC = () => {
   return (
@@ -11,6 +12,6 @@ const AboutPage: React.FC = () => {
   );
 };
 
-export const Head: React.FC = () => <title>About Me</title>;
+export const Head: React.FC = () => <Seo title="About Me" />;
 
 export default AboutPage;
