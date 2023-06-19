@@ -8,9 +8,13 @@ const AboutPage: React.FC<PageProps> = ({ data }) => {
   return (
     <Layout pageTitle="Blog">
       <ul>
-        {data.allFile.nodes.map(({ name }) => {
-          return <li key={name}>{name}</li>;
-        })}
+        {data.allMdx.nodes.map((node) => (
+          <article key={node.id}>
+            <h2>{node.frontmatter.title}</h2>
+            <p>Posted: {node.frontmatter.date}</p>
+            <p>{node.excerpt}</p>
+          </article>
+        ))}
       </ul>
     </Layout>
   );
@@ -21,10 +25,15 @@ export const Head: React.FC = () => <Seo title="Blog" />;
 export default AboutPage;
 
 export const query = graphql`
-  query GetBlogs {
-    allFile {
+  query GetBlog {
+    allMdx(sort: { frontmatter: { date: DESC } }) {
       nodes {
-        name
+        frontmatter {
+          date(formatString: "MMMM D, YYYY")
+          title
+        }
+        id
+        excerpt
       }
     }
   }
