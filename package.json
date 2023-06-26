@@ -5,7 +5,8 @@
   "description": "my-gatsby-site",
   "author": "Rahul Kumar Mohanta",
   "keywords": [
-    "gatsby"
+    "gatsby",
+    "offical document"
   ],
   "scripts": {
     "develop": "gatsby develop",
